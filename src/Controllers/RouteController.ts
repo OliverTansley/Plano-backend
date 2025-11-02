@@ -1,8 +1,8 @@
-import { injectable, inject, container } from "tsyringe";
+import { injectable } from "tsyringe";
 import { RoutePlanningService } from "../Services/RoutePlanningService";
 
 @injectable()
-class RouteController {
+export class RouteController implements IController {
   _routePlanningService: RoutePlanningService;
 
   RouteController(routePlanningSerivce: RoutePlanningService) {
@@ -11,7 +11,7 @@ class RouteController {
 
   HandleRequest(action: string, requestParams: Array<string>) {
     if (action === "Plan") {
-      this._routePlanningService.PlanRoute();
+      return this._routePlanningService.PlanRoute();
     }
   }
 }

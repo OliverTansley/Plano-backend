@@ -1,4 +1,4 @@
-import { container, injectable, inject } from "tsyringe";
+import { injectable } from "tsyringe";
 
 export
 @injectable()
